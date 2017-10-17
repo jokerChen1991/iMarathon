@@ -1,11 +1,13 @@
-<%@ page language="java" pageEncoding="UTF-8" %>
-<!DOCTYPE>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-hello world!
-</body>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="<%=request.getContextPath()%>"/>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>home page</title>
+  </head>
+  <body>
+  	<c:redirect url="/login/toLogin"/>
+  </body>
 </html>
