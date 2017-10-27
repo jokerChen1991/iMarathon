@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+.project_logo{
+    height: 48px;
+    width: 68px;
+	background: rgba(0, 0, 0, 0) url("../images/Java_48px.png") no-repeat 20px 0px;
+}
+
+.login_user{
+    height: 48px;
+    width: 68px;
+	background: rgba(0, 0, 0, 0) url("../images/user_48px.png") no-repeat 10px;
+}
+
+.sign_out{
+    height: 48px;
+    width: 68px;
+	background: rgba(0, 0, 0, 0) url("../images/logoff_48px.png") no-repeat 10px;
+}
+
+.dropdown_li{
+	text-align: center;
+	line-height: 32px;
+	font-size: 16px;
+	height: 32px;
+}
+
+.dropdown_li:HOVER{
+	background-color: #337ab7;
+}
+
+.dropdown_li_divider{
+	background-color: #e5e5e5;
+	height : 1px;
+	overflow : hidden;
+}
+
+.arrow_img_span{
+	height: 16px;
+    width: 16px;
+	display: table-cell;
+	float: right;
+	position: relative;
+}
+
+.arrow_up{
+	background: rgba(0, 0, 0, 0) url("../images/arrow_up.png") no-repeat;
+}
+.arrow_down{
+	background: rgba(0, 0, 0, 0) url("../images/arrow_down.png") no-repeat;
+}
+.arrow_left{
+	background: rgba(0, 0, 0, 0) url("../images/arrow_left.png") no-repeat;
+}
+.arrow_right{
+	background: rgba(0, 0, 0, 0) url("../images/arrow_right.png") no-repeat;
+}
+

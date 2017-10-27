@@ -1,0 +1,258 @@
+@CHARSET "UTF-8";
+
+/**
+* 弹出框样式
+**/
+
+/**
+* 弹出框背景遮罩样式
+**/
+.dialog-backdrop{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color:rgba(0, 0, 0, 0.5)
+}
+
+.dialog-container{
+	border-radius: 6px;
+	position: absolute;
+	background-color: #fff;
+   	top: 50%;
+   	left: 50%;
+}
+
+.alert-container{
+	width: 300px;
+ 	height: 170px;
+   	margin-top: -95px;
+   	margin-left: -150px;
+}
+
+.show-container{
+	border-radius: 6px;
+	position: absolute;
+	background-color: #fff;
+	border-top:none;
+	width:300px;
+	height:130px;
+}
+
+.messager-alert-header{
+	height:30px;
+	text-indent: 10px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #000;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+}
+
+.messager-alert-body{
+	height: 100px;
+	padding: 10px;
+}
+
+.messager-info-bg{
+	background-color: #48A5E4;
+}
+.messager-success-bg{
+	background-color: #94DA1C;
+}
+.messager-error-bg{
+	background-color: #D41515;
+}
+.messager-warning-bg{
+	background-color: #F8CB0C;
+}
+
+.messager-info-border{
+	border: 1px solid #48A5E4;
+}
+.messager-success-border{
+	border: 1px solid #94DA1C;
+}
+.messager-error-border{
+	border: 1px solid #D41515;
+}
+.messager-warning-border{
+	border: 1px solid #F8CB0C;
+}
+
+.messager-icon {
+    float: left;
+    margin: 16px 10px 10px 0;
+    height: 48px;
+    width: 48px;
+}
+.messager-info {
+    background: rgba(0, 0, 0, 0) url("../images/icon/info.png") no-repeat;
+}
+.messager-success {
+    background: rgba(0, 0, 0, 0) url("../images/icon/success.png") no-repeat;
+}
+.messager-error {
+    background: rgba(0, 0, 0, 0) url("../images/icon/error.png") no-repeat;
+}
+.messager-warning {
+    background: rgba(0, 0, 0, 0) url("../images/icon/warning.png") no-repeat;
+}
+
+.messager-alert-footer{
+	height: 40px;
+	text-align: center;
+	padding-top: 0px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.messager-button{
+	color:#333;
+	height: 40px;
+	padding: 3px;
+	border-radius: 0px;
+	display: inline-block;
+	cursor:pointer;
+	vertical-align: middle;
+	text-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-left: 0;
+}
+
+.messager-alert-footer>button:first-child
+{ 
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-bottom-left-radius: 5px;
+}
+
+.messager-alert-footer>button:last-child{
+	border-bottom-right-radius: 5px;
+}
+
+@media (min-width: 768px) {
+	
+	.messager-alert-footer{
+		height: 40px;
+		text-align: center;
+		padding-top: 4px;
+		border-bottom-right-radius: 6px;
+		border-bottom-left-radius: 6px;
+		border-style: solid;
+		border-width: 1px;
+	}
+	
+	.messager-button{
+		color: #333;
+		height: 30px;
+		width: 80px;
+		padding: 3px;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		display: inline-block;
+		cursor:pointer;
+		vertical-align: middle;
+		text-align: center;
+		float: inherit;
+		margin: 0 5px;
+	}
+}
+
+.messager-info-border{
+	border-color: #48A5E4;
+}
+.messager-success-border{
+	border-color: #94DA1C;
+}
+.messager-error-border{
+	border-color: #D41515;
+}
+.messager-warning-border{
+	border-color: #F8CB0C;
+}
+
+
+.dialog-close-button{
+	float: right;
+	color: #000;
+	padding : 0;
+	border: 0 none;
+	cursor : pointer;
+	margin: auto 8px;
+	font-size: 25px;
+	line-height: 1;
+}
+
+
+.dialog-footer-button{
+	background-color: #dfdfdf;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-top: 1px solid #48A5E4;
+	height: 40px;
+	text-align: center;
+}
+
+.dialog-footer-button>button{
+	border: 0;
+	border-radius: 0px;
+	height: 39px;
+	vertical-align: middle;
+	color:#333;
+	padding: 8px;
+	cursor:pointer;
+	border-left: 1px solid #48A5E4;
+	display: inline-block;
+}
+
+.dialog-footer-button>button:first-child
+{ 
+	border-left: 0;
+	border-bottom-left-radius: 5px;
+}
+
+.dialog-footer-button>button:last-child{
+	border-bottom-right-radius: 5px;
+}
+
+@media (min-width: 768px) {
+	.dialog-footer-button{
+		background-color: #fff;
+		border-bottom-right-radius: 6px;
+		border-bottom-left-radius: 6px;
+		border-top: 1px solid #48A5E4;
+		height: 40px;
+		text-align: center;
+		padding: 5px;
+	}
+	
+	.dialog-footer-button>button{
+		color:#333;
+		background-color: #f2f2f2;
+		height: 30px;
+		width: 80px;
+		padding: 3px;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+		display: inline-block;
+		cursor:pointer;
+		vertical-align: middle;
+		text-align: center;
+		float: inherit;
+		margin: 0 3px;
+	}
+	.dialog-footer-button>button:hover{
+		background-color: #fff;
+	}
+	
+	.dialog-footer-button>button:first-child{ 
+		border-left: 1px solid #ccc;
+	}
+	
+}
+
+
+

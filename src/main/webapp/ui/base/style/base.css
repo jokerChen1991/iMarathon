@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+
+.row-height-xs-10{
+	height:10%;
+}
+
+.row-height-xs-15{
+	height:15%;
+}
+
+.row-height-xs-20{
+	height:20%;
+}
+
+@media (min-width: 768px) {
+	.row-height-sm-15{
+		height: 15%;
+	}
+	.row-height-sm-20{
+		height: 20%;
+	}
+	.row-height-sm-30{
+		height: 30%;
+	}
+	
+	.col-sm-1p5{
+		width: 12.5%;
+	}
+	
+	.col-sm-10p5{
+		width: 87.5%;
+	}
+}
+
+@media (min-width: 992px) {
+	.row-height-md-15{
+		height: 15%;
+	}
+	.row-height-md-20{
+		height: 20%;
+	}
+	.row-height-md-25{
+		height: 25%;
+	}
+	.row-height-md-30{
+		height: 30%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.row-height-lg-20{
+		height: 20%;
+	}
+	.row-height-lg-25{
+		height: 25%;
+	}
+	.row-height-lg-30{
+		height: 30%;
+	}
+	.row-height-lg-40{
+		height: 40%;
+	}
+}
+
+.button-positon-bottom-xs{
+	bottom: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	position: absolute;
+}
+
+.button-positon-bottom-xs>input{
+	border: 1px solid #f0f0f0;
+	border-radius: 0px;
+	float: right;
+}
+
+.jqgrid-container-xs{
+	margin: 0px;
+}
+
+@media (min-width: 768px) {
+	.button-positon-bottom-sm{
+		bottom: none;
+		margin-bottom: 0px;
+		position: relative;
+		margin-right: 20px;
+	}
+	
+	.button-positon-bottom-sm>input{
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		margin-right: 20px;
+		float: right;
+	}
+	
+	.th-backgroud-color{
+		background-color: red;
+	}
+	
+	.jqgrid-container-sm{
+		margin: 20px;
+	}
+	
+}
+
+.lable-for-input{
+	padding: 7px 0 0 0;
+	text-align: right;
+}
+
+
+
+
