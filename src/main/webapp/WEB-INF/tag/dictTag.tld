@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC 
+	"-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+	"http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>dict</short-name>
+	<!-- 引用路径 例：<%@ taglib uri="http://www.dictTag.com" prefix="dict" %> -->
+	<uri>http://www.jokerChen.org/tags</uri>
+	<description>this is dict's tld lib</description>
+	<tag>
+		<!-- 这个tag的名字，关系到jsp页面的引用 <yy:select> -->
+		<name>select</name>
+		<!-- 这个Tag是由那个类实现的,这个class可以在struts.jar包中找到 -->
+		<tag-class>com.jokerchen.tag.DictTag</tag-class>
+		<!--body-content有三个可选值 
+			1."jsp" 表示标签体由其他jsp元素组成 如果其有jsp元素，那么标签会先解释，然后将元素的实际值传入。 
+				比如标签体里含有<%=attributeName%>这样子的jsp元素， 此时标签会按attributeName的实际值是什么就传入什么。这个是最常用的一个。 
+			2."empty" 标签体必须为空 在引用这个Tag的时候，可以<yy:select id="attributeName" />， 
+				而不必<yy:select id="attributeName" ></yy:select> 
+			3."tagdependent" 由标签解释，不带jsp转换 -->
+		<body-content>empty</body-content>
+		<!-- <attribute> </attribute>这里标识的是这个Tag的一个参数。
+			 例如<yy:select id="attributeName"/>中的id -->
+		<attribute>
+			<!-- 这个参数的名字 -->
+			<name>sortCode</name>
+			<!-- 这个参数是否是必填项， 如果为true则必须写这个参数，否则会报错 -->
+			<required>true</required>
+			<!-- 是说这个标签的值是否可以动态赋值，如value="<%=attributeName%>" -->
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>id</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cssStyle</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>cssClass</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>value</name>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>nullStr</name>
+			<rtexprvalue>false</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

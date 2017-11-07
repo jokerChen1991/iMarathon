@@ -48,6 +48,13 @@
 							placeholder="类型英文名称" name="nameEn" >
 					</div>
 				</div>
+				<div class="col-sm-12 col-xs-12" style="padding:5px 0 5px 0;">
+					<label class="col-xs-3 lable-for-input">显示顺序：</label>
+					<div class="col-xs-9">
+						<input type="text" class="form-control" value="${dict.sequence}"
+							placeholder="显示顺序" name="sequence" >
+					</div>
+				</div>
 			</div>
 			
 		</form>

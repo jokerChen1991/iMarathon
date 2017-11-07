@@ -77,6 +77,7 @@ function initDictGrid(sortCode){
             { label: '中文名称', name: 'nameZh',sortable: false, width: 30 },
 			{ label: '英文名称', name: 'nameEn', sortable: false, width: 30 },
 			{ label: '中文繁体', name: 'nameTw', sortable: false, width: 20 },
+			{ label: '显示顺序', name: 'sequence', sortable: false, width: 20 },
 			{ label: '状态', name: 'status', sortable: false, width: 20 }
 		],
         autowidth: true,
@@ -293,7 +294,7 @@ function addDict(){
 				operation: 'A'
 			},
 			title: '新增数据字典',
-			height: 300,
+			height: 340,
 			width: 450,
 			modal: true,
 			buttons:[{
@@ -329,7 +330,7 @@ function editDict(){
 				id: ids[0]
 			},
 			title: '修改数据字典',
-			height: 300,
+			height: 340,
 			width: 450,
 			modal: true,
 			buttons:[{
