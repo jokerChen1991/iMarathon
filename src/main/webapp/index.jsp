@@ -8,6 +8,7 @@
     <title>home page</title>
   </head>
   <body>
-  	<c:redirect url="/login/toLogin"/>
+  	<%-- <c:redirect url="/sys/common/login/toLogin"/> --%>
+  	<c:redirect url="/marathon/page/layout"/>
   </body>
 </html>

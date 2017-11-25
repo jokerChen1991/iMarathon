@@ -38,7 +38,7 @@
 				      <li class="dropdown_li">修改密码</li>
 		          </ul>
 		       </li>
-			   <li><a href="#">退出</a></li>
+   			   <li><a href="<%=request.getContextPath() %>/sys/common/login/logout" >退出</a></li>
 			</ul>
 	   </div>
 	</nav>

@@ -32,7 +32,7 @@
 	<div class="container-fluid">
 		<div class="row row-height-xs-15 row-height-sm-20 ow-height-md-25 row-height-lg-25">
 			<div class="col-lg-6 col-md-6 col-sm-3 col-xs-1"></div>
-			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" align="right">
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" style="align:right">
 				<a href="${contextPath}/language/language?language=en_US">English</a>
 				<span>|</span>
 				<a href="${contextPath}/language/language?language=zh_CN">中文</a>
@@ -44,7 +44,7 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-3 col-xs-1"></div>
 			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-10">
-				<form id="loginForm" class="form-horizontal" action="${contextPath}/login/doLogin" method="post">
+				<form id="loginForm" class="form-horizontal" action="${contextPath}/sys/common/login/doLogin" method="post">
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h3 class="panel-title">

@@ -1,0 +1,22 @@
+
+.layout-header{height:20px;width:100%;}
+.layout-header>nav.navbar{margin-bottom:0 !important;}
+
+.header-bg{background-color: #F2F2F2;}
+
+.logo-area{padding:20px 0 20px 10%;float:left;width:30%;}
+.logo-img{background-image: url("../images/layout/logo.png");
+	background-size:cover; height:30px; width:30px;float:left;}
+.logo-span{float:left;padding: 3px;}
+.logo-span span{font-size:20px;}
+
+.menu-area{float:left;width:70%;}
+.menu-area>ul>li>a{padding:27px 31px;color:#000;}
+.menu-area>ul>li>a:hover{background: #00ABEA;}
+
+.layout-footer{width:100%;background-color: #F2F2F2;}
+.footer-content{margin:0 auto;width:470px;}
+.footer-content>table{width:100%;}
+.footer-content>table>tbody>tr>td{text-align: center;padding:7px 0;}
+
+

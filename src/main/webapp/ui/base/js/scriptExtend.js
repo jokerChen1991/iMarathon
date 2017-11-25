@@ -35,10 +35,13 @@
 				}
 			},
 			error : function(e) {
-				console.info(e);
 				var res = e.responseJSON;
 				if(res != null){
-					$.messager.alert(res.code + "："+res.message,"error");
+					if(res.code == "unlogin"){
+						window.open(util_getContextPath()+"/sys/common/login/toLogin", "_self");
+					}else{
+						$.messager.alert(res.code + "："+res.message,"error");
+					}
 				}
 				if(options.error && !$.isFunction(options.error)){
 					options.error(res);
