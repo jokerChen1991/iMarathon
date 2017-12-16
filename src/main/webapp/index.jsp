@@ -9,6 +9,6 @@
   </head>
   <body>
   	<%-- <c:redirect url="/sys/common/login/toLogin"/> --%>
-  	<c:redirect url="/marathon/page/layout"/>
+  	<c:redirect url="/marathon/portal/index"/>
   </body>
 </html>

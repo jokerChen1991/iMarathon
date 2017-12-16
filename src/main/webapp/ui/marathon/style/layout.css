@@ -1,10 +1,10 @@
 
-.layout-header{height:20px;width:100%;}
+.layout-header{width:100%;}
 .layout-header>nav.navbar{margin-bottom:0 !important;}
 
 .header-bg{background-color: #F2F2F2;}
 
-.logo-area{padding:20px 0 20px 10%;float:left;width:30%;}
+.logo-area{padding:20px 0 0 10%;float:left;width:30%;height:74px;}
 .logo-img{background-image: url("../images/layout/logo.png");
 	background-size:cover; height:30px; width:30px;float:left;}
 .logo-span{float:left;padding: 3px;}
@@ -14,9 +14,23 @@
 .menu-area>ul>li>a{padding:27px 31px;color:#000;}
 .menu-area>ul>li>a:hover{background: #00ABEA;}
 
-.layout-footer{width:100%;background-color: #F2F2F2;}
+.layout-center{margin-top:24px;}
+
+.layout-footer{width:100%;background-color: #F2F2F2;margin-top: 30px;padding: 20px 0;}
 .footer-content{margin:0 auto;width:470px;}
 .footer-content>table{width:100%;}
 .footer-content>table>tbody>tr>td{text-align: center;padding:7px 0;}
 
+
+.layout-title{width:100%;margin: 20px 0;}
+.layout-title-info{width:101px;height:38px;font-size:16px;text-align:center;}
+.layout-title-more{font-size:16px;text-align:right;}
+
+.layout-gray-line{background: url("../images/layout/gray-line.png") repeat;height:9px;}
+.layout-blue-line{background: url("../images/layout/blue-line.png") repeat;height:9px;width:101px;} 
+
+.no-padding{padding:0 0 0 0;}
+
+.overseas-match{width:100%;}
+.overseas-match td{width:20%;text-align: center;padding:5px;}
 

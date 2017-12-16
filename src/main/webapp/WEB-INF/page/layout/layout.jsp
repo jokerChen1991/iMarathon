@@ -25,7 +25,7 @@
 	      </button>
 	   </div>
 	   <div class="collapse navbar-collapse" id="navbar-collapse">
-	      <ul class="nav navbar-nav navbar-left" id="narbar_ul">
+	      <ul class="nav navbar-nav navbar-left" id="narbar_ul_menu">
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right" style="margin-right: 0px; ">
 			   <li class="dropdown">
@@ -33,12 +33,12 @@
 		             Java <b class="caret"></b>
 		          </a>
 		          <ul class="dropdown-menu" style="padding: 0px;">
-		              <li class="dropdown_li">用户信息</li>
+		              <li class="dropdown_li" onclick="userDetail();">用户信息</li>
 				      <li class="dropdown_li_divider"></li>
-				      <li class="dropdown_li">修改密码</li>
+				      <li class="dropdown_li" onclick="updatePassword();">修改密码</li>
 		          </ul>
 		       </li>
-   			   <li><a href="<%=request.getContextPath() %>/sys/common/login/logout" >退出</a></li>
+			   <li><a href="<%=request.getContextPath() %>/sys/common/login/logout" >退出</a></li>
 			</ul>
 	   </div>
 	</nav>
@@ -49,6 +49,7 @@
       </div>
     </div>
     
+    <div id="layout_diglog"></div>
     
 	<script src="${contextPath}/ui/base/js/jquery-2.1.1.min.js"></script>
 	<script src="${contextPath}/ui/bootstrap-3.3.5/js/bootstrap.min.js"></script>

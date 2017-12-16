@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jokerchen.marathon.console.mapper.MatchMapper" >
+	
+	<resultMap id="match" type="com.jokerchen.marathon.console.model.Match">
+		<id column="id" property="id" />
+        <result column="match_name" property="matchName"/>
+        <result column="match_logo" property="matchLogo"/>
+        <result column="match_area" property="matchArea"/>
+        <result column="official_web" property="officialWeb"/>
+        <result column="status" property="status"/>
+        <result column="match_date" property="matchDate"/>
+        <result column="regist_start_time" property="registStartTime"/>
+        <result column="regist_end_time" property="registEndTime"/>
+        <result column="regist_end_time" property="registEndTime"/>
+        <result column="match_event" property="matchEvent"/>
+	</resultMap>
+	<resultMap id="matchEvent" type="com.jokerchen.marathon.console.model.MatchEvent">
+		<id column="id" property="id" />
+        <result column="match_id" property="matchId"/>
+        <result column="marathon_type" property="marathonType"/>
+        <result column="application_num" property="applicationNum"/>
+        <result column="registration_fee" property="registrationFee"/>
+        <result column="starting_time" property="startingTime"/>
+        <result column="closing_time" property="closingTime"/>
+        <result column="starting_point" property="startingPoint"/>
+        <result column="terminal_point" property="terminalPoint"/>
+        <result column="course" property="course"/>
+        <result column="text" property="text"/>
+    </resultMap>
+	
+	<select id="findMatch" resultMap="match"
+		parameterType="com.jokerchen.marathon.console.model.Match">
+		SELECT
+			m.id,
+			m.match_name,
+			m.match_logo,
+			(SELECT a.merger_name FROM b_china_area a WHERE a.code = m.match_area) as match_area,
+			m.official_web,
+			m.status,
+			m.match_date,
+			GROUP_CONCAT(e.marathon_type SEPARATOR '/' ) as match_event
+		FROM m_match m LEFT JOIN m_match_event e ON m.id = e.match_id where 1=1
+		<if test="id != null and id != '' "> and m.id = #{id}</if>
+		<if test="matchName != null and matchName != '' "> and m.match_name like CONCAT("%",#{matchName},"%")</if>
+		<if test="matchArea != null and matchArea != '' "> and m.match_area = #{matchArea}</if>
+		<if test="status != null and status != '' "> and m.status = #{status}</if>
+		<if test="queryStartDate != null and queryStartDate != '' "> and m.match_date &gt;= #{queryStartDate}</if>
+		<if test="queryEndDate != null and queryEndDate != '' "> and m.match_date &lt;= #{queryEndDate}</if>
+		<if test="province != null and province != '' "> 
+			and m.match_area in (SELECT a.code FROM b_china_area a WHERE a.parent_code = #{province} ) 
+		</if>
+		<if test="city != null and city != '' "> 
+			and m.match_area = #{city} 
+		</if>
+		GROUP BY m.id
+		ORDER BY m.match_date desc
+	</select>
+
+	<select id="findMatchById" resultMap="match" parameterType="int">
+		SELECT 
+		m.id,m.match_name,m.match_logo,m.match_area,m.official_web,m.status,
+		m.match_date,m.regist_start_time,m.regist_end_time,
+        m.regist_end_time,
+		(SELECT a.parent_code FROM b_china_area a WHERE a.code = m.match_area ) as province
+		FROM m_match m where m.id = #{id}
+	</select>
+
+	<select id="findMatchEvent" resultMap="matchEvent" parameterType="int">
+		select m.*,m.marathon_type as text from m_match_event m where m.match_id = #{matchId}
+	</select>
+
+	<insert id="addMatch" useGeneratedKeys="true" keyProperty="id"
+		parameterType="com.jokerchen.marathon.console.model.Match">
+		insert into 
+			m_match(match_name,match_logo,match_area,official_web,status,
+				match_date,regist_start_time,regist_end_time
+			) 
+		values
+			(#{matchName},#{matchLogo},#{matchArea},#{officialWeb},#{status},
+			#{matchDate},#{registStartTime},#{registEndTime})
+	</insert>
+
+   	<update id="updateMatch" parameterType="com.jokerchen.marathon.console.model.Match">
+		update m_match set 
+			match_name=#{matchName},match_logo=#{matchLogo},
+			match_area=#{matchArea},official_web=#{officialWeb},
+			status=#{status},match_date=#{matchDate},
+			regist_start_time=#{registStartTime},
+			regist_end_time=#{registEndTime}
+		where
+			id=#{id}
+	</update>
+	
+	<delete id="deleteMatch" parameterType="map">
+		DELETE FROM m_match
+		where id in 
+		<foreach collection="ids" item="item" index="index" 
+			open="(" close=")" separator=",">
+				#{item}
+		</foreach>
+    </delete>
+    
+    <delete id="deleteMatchEvent" parameterType="int">
+		DELETE FROM m_match_event where match_id = #{matchId}
+    </delete>
+    
+   	<insert id="addMatchEvent" parameterType="com.jokerchen.marathon.console.model.MatchEvent">
+		insert into 
+			m_match_event(match_id,marathon_type,application_num,registration_fee,
+				starting_time,closing_time,starting_point,terminal_point,course
+			) 
+		values
+			(#{matchId},#{marathonType},#{applicationNum},#{registrationFee},
+			#{startingTime},#{closingTime},#{startingPoint},#{terminalPoint},#{course})
+	</insert>
+
+    
+
+</mapper>

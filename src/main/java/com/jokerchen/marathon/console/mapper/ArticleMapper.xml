@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jokerchen.marathon.console.mapper.ArticleMapper" >
+
+	<resultMap id="article" type="com.jokerchen.marathon.console.model.Article">
+		<id column="id" property="id" />
+        <result column="title" property="title"/>
+        <result column="creator" property="creator"/>
+        <result column="type" property="type"/>
+        <result column="visit" property="visit"/>
+        <result column="create_time" property="createTime"/>
+        <result column="content" property="content"/>
+	</resultMap>
+
+	<select id="findArticle" resultMap="article" 
+		parameterType="com.jokerchen.marathon.console.model.Article">
+		select * from m_article WHERE 1=1
+		<if test="title != null and title != '' "> and title like CONCAT("%",#{title},"%")</if>
+		<if test="type != null and type != '' "> and type = #{type}</if>
+		<if test="creator != null and creator != '' "> and creator = #{creator}</if>
+		order by create_time desc
+	</select>
+	
+	<select id="findArticleById" resultMap="article" parameterType="int">
+		select * from m_article WHERE id = ${id}
+	</select>
+
+	<insert id="addArticle" parameterType="com.jokerchen.marathon.console.model.Article">
+		insert into 
+			m_article(title,creator,type,visit,create_time,content) 
+		values
+			(#{title},#{creator},#{type},#{visit},#{createTime},#{content})
+	</insert>
+
+   	<update id="updateArticle" parameterType="com.jokerchen.marathon.console.model.Article">
+		update m_article set 
+			title=#{title},creator=#{creator},type=#{type},
+			visit=#{visit},create_time=#{createTime},content=#{content}
+		where
+			id=#{id}
+	</update>
+	
+	<delete id="deleteArticle" parameterType="map">
+		DELETE FROM m_article
+		WHERE id IN 
+		<foreach collection="ids" item="item" index="index" 
+			open="(" close=")" separator=",">
+				#{item}
+		</foreach>
+    </delete>
+    
+</mapper>

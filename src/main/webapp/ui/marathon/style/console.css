@@ -1,0 +1,10 @@
+
+
+.caption>p.btn_p{height:24px;margin:0;}
+.caption>p.btn_p>a{float:right;margin:5px;cursor: pointer;}
+
+
+.add_btn{background-image: url("../images/console/add.png"); }
+.edit_btn{background-image: url("../images/console/edit.png");}
+.remove_btn{background-image: url("../images/console/remove.png");}
+.button{height:16px; width:16px;float:right;margin:5px;cursor: pointer;}

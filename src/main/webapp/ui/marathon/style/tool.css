@@ -1,0 +1,12 @@
+
+caption{font-size:20px; color:rgb(0, 171, 234); padding-left: 15px;}
+
+.toolTable{border-collapse:collapse;border-spacing: 0;width:100%;}
+.toolTable tr>td:FIRST-CHILD {color:rgb(0, 171, 234); width:60px;}
+.toolTable tr td{text-align: left;vertical-align: middle;padding:5px 0 5px 15px;}
+
+.toolTable>thead th div{padding:10px 15px 5px 15px;
+	border-bottom:5px solid #EBEBEB;cursor: pointer;}
+.toolTable>thead th div.active{border-bottom:5px solid #00ABEA;color: #00ABEA;}
+
+.div-padding{padding-top: 10px; padding-bottom: 10px;}

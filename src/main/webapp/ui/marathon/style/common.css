@@ -1,0 +1,2 @@
+
+.recent-match tr:NOT(:FIRST-CHILD){text-indent: 5px;}

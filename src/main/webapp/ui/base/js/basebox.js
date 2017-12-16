@@ -167,11 +167,11 @@ var messager_type_warning="warning"; //警告
 		var dialog = $.fn.dialog = function(options) {
 			if (options == null)
 				options = {};
-			var oldDialogDom = $('#dialog_id'+$(this).attr("id"));
+			var oldDialogDom = $('#dialog_id_'+$(this).attr("id"));
 			if(oldDialogDom.length>0){
 				oldDialogDom.remove();
 			}
-			var dialog_id = "dialog_id"+$(this).attr("id");
+			var dialog_id = "dialog_id_"+$(this).attr("id");
 			var content = $("<div class=\"dialog-container\" id=\""+dialog_id+"\"" +
 					"style=\"border: 1px solid #48A5E4;border-top:none;\"></div>");
 			var modalDiv = $("<div />");

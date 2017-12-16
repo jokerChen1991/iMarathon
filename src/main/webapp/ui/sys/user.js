@@ -42,7 +42,7 @@ $(function(){
     });
     
 	
-    $(window).resize(function(){
+    /*$(window).resize(function(){
     	resizeShowHideCol();
     });
     
@@ -61,7 +61,7 @@ $(function(){
     	}
     }
 
-    resizeShowHideCol();
+    resizeShowHideCol();*/
 });
 
 function queryUser(){

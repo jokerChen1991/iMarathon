@@ -191,6 +191,13 @@
 		    <scope>provided</scope>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.3.3</version>
+		</dependency>
+		
 		<!-- 引入自定义的基础jar包 -->
 		<dependency>
 			<groupId>com.jokerchen</groupId>

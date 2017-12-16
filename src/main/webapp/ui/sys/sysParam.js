@@ -11,9 +11,9 @@ $(function(){
         datatype: "json",
         caption: '系统参数信息',
         colModel: [ 
-            { label: '参数编码',key: true, name: 'code',sortable: false, width: 10 },
-            { label: '参数名称', name: 'name',sortable: false, width: 20 },
-            { label: '参数值', name: 'value',sortable: false, width: 20 }
+            { label: '参数编码',key: true, name: 'code',sortable: false, width: 100 },
+            { label: '参数名称', name: 'name',sortable: false, width: 200 },
+            { label: '参数值', name: 'value',sortable: false, width: 200 }
 		],
         autowidth: true,
         altRows: true,
